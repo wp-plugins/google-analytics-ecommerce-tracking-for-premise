@@ -26,7 +26,7 @@ You can follow the manual procedure:
 
 1. Upload the <code>premise-google-analytics-ecommerce</code> directory into the <code>/wp-content/plugins/</code> directory.
 2. Activate the Google Analytics Ecommerce Tracking for Premise from the Plugins" section in your WordPress dashboard.
-3. Setup your plugin so it links to your iDev installation.
+3. Add your Google Analytics profile id and activate the integration from Member Access > Google Analytics Ecommerce.
 
 == Frequently Asked Questions ==
 

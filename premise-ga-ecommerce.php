@@ -3,7 +3,7 @@
 Plugin Name: GA Ecommerce Tracking for Premise
 Plugin URI: http://www.eugenoprea.com/wordpress-plugins/premise-google-analytics-ecommerce/?utm_source=wp_admin&utm_medium=plugin&utm_campaign=premise_ga_ecommerce-tracking
 Description: Send Ecommerce data from Premise to Google Analytics. It passes item and order information to Google Analytics reports when Ecommerce is activated.
-Version: 1.0
+Version: 1.0.1
 Author: Eugen Oprea
 Author URI: http://www.eugenoprea.com/?utm_source=wp_admin&utm_medium=plugin&utm_campaign=premise_ga_ecommerce-tracking
 License: GPLv2 or later
@@ -33,7 +33,7 @@ class PremiseGAEcommerce {
 		$this->options = (array) get_option('premise-ga-ecommerce-settings');
 
 		if  (isset($this->options['enabled']) && $this->options['enabled']) {
-			add_action('premise_membership_create_order', array($this, 'get_order_data'), 10, 4);
+			add_action('premise_membership_create_order', array($this, 'get_order_data'), 10, 3);
 			add_action('premise_checkout_complete_after', array($this, 'print_javascript'), 10);
 		}
 
@@ -45,9 +45,9 @@ class PremiseGAEcommerce {
 			require dirname(__FILE__) . '/admin.php';
 	}
 
-	function get_order_data($member_id, $order_details, $renewal, $order_id) {
+	function get_order_data($member_id, $order_details, $renewal) {
 		$this->order_data = array(
-			'trans_id' => get_the_title($order_id),
+			'trans_id' => $order_details['_acp_order_time'],
 			'store_name' => get_bloginfo('name'),
 			'total' => $order_details['_acp_order_price'] ? $order_details['_acp_order_price'] : 0,
 		);

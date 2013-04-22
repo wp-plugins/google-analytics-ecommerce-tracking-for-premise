@@ -1,10 +1,11 @@
 === Plugin Name ===
 Google Analytics Ecommerce Tracking for Premise
 Contributors: echoelse
+Donate link: http://www.eugenoprea.com/wordpress-plugins/premise-google-analytics-ecommerce/
 Tags:  premise, analytics, google, google analytics, ecommerce, commerce, checkout, wordpress, plugin
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,6 +40,9 @@ Please use the Support section of this plugin.
 1. Enable Google Analytics Ecommerce
 
 == Changelog ==
+
+= 1.0.1 =
+Remove deprecated 4th argument of premise_membership_create_order action
 
 = 1.0 =
 
